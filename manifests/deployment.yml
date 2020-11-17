@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sshaikwebapitest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sshaikwebapitest
+  template:
+    metadata:
+      labels:
+        app: sshaikwebapitest 
+    spec:
+      containers:
+        - name: sshaikwebapitest 
+          image: sscontainerregistry2.azurecr.io/sshaikwebapitest
+          ports:
+          - containerPort: 80
